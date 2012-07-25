@@ -783,7 +783,8 @@ XN_C_API XnStatus xnUSBSendControl(XN_USB_DEV_HANDLE pDevHandle, XnUSBControlTyp
 	}
 	else
 	{
-		return (XN_STATUS_USB_WRONG_CONTROL_TYPE);
+		//return (XN_STATUS_USB_WRONG_CONTROL_TYPE);
+		bmRequestType = nType;
 	}
 	
 	bmRequestType |= LIBUSB_ENDPOINT_OUT;
@@ -840,7 +841,8 @@ XN_C_API XnStatus xnUSBReceiveControl(XN_USB_DEV_HANDLE pDevHandle, XnUSBControl
 	}
 	else
 	{
-		return (XN_STATUS_USB_WRONG_CONTROL_TYPE);
+		//return (XN_STATUS_USB_WRONG_CONTROL_TYPE);
+		bmRequestType = nType;
 	}
 	
 	bmRequestType |= LIBUSB_ENDPOINT_IN;
